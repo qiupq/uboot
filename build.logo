@@ -1,0 +1,68 @@
+make: arm-linux-gcc: Command not found
+for dir in tools examples post post/cpu ; do make -C $dir _depend ; done
+make[1]: arm-linux-gcc: Command not found
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/tools'
+ln -s ../common/environment.c environment.c
+ln -s ../lib_generic/crc32.c crc32.c
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/tools'
+make[1]: arm-linux-gcc: Command not found
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/tools'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/tools'
+make[1]: arm-linux-gcc: Command not found
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/examples'
+/bin/sh: 1: arm-linux-gcc: not found
+dirname: missing operand
+Try 'dirname --help' for more information.
+/bin/sh: 1: arm-linux-gcc: not found
+dirname: missing operand
+Try 'dirname --help' for more information.
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+make[1]: *** No rule to make target `.depend', needed by `_depend'.  Stop.
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/examples'
+make[1]: arm-linux-gcc: Command not found
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/post'
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+make[1]: *** No rule to make target `.depend', needed by `_depend'.  Stop.
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/post'
+make[1]: arm-linux-gcc: Command not found
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/post/cpu'
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+/bin/sh: 3: arm-linux-gcc: not found
+make[1]: *** No rule to make target `.depend', needed by `_depend'.  Stop.
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/post/cpu'
+make: *** [depend] Error 2

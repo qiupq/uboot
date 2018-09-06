@@ -1,0 +1,943 @@
+for dir in tools examples post post/cpu ; do make -C $dir _depend ; done
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/tools'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/tools'
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/examples'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/examples'
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/post'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/post'
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/post/cpu'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/post/cpu'
+make -C tools all
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/tools'
+gcc -g -Wall -pedantic -idirafter /mnt/ccc/others/u-boot-mini6410/include -idirafter /mnt/ccc/others/u-boot-mini6410/include2 -idirafter /mnt/ccc/others/u-boot-mini6410/include -DTEXT_BASE=0xc7e00000 -DUSE_HOSTCC -O -c -o envcrc.o envcrc.c
+gcc -g  -idirafter /mnt/ccc/others/u-boot-mini6410/include -idirafter /mnt/ccc/others/u-boot-mini6410/include2 -idirafter /mnt/ccc/others/u-boot-mini6410/include -DTEXT_BASE=0xc7e00000 -DUSE_HOSTCC -c -o environment.o environment.c
+gcc -Wall -pedantic -idirafter /mnt/ccc/others/u-boot-mini6410/include -idirafter /mnt/ccc/others/u-boot-mini6410/include2 -idirafter /mnt/ccc/others/u-boot-mini6410/include -DTEXT_BASE=0xc7e00000 -DUSE_HOSTCC -O -o envcrc envcrc.o crc32.o environment.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/tools'
+make -C examples all
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/examples'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/examples'
+make -C post all
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/post'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/post'
+make -C post/cpu all
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/post/cpu'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/post/cpu'
+make -C lib_generic/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/lib_generic'
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o bzlib.o bzlib.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o bzlib_crctable.o bzlib_crctable.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o bzlib_decompress.o bzlib_decompress.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o bzlib_randtable.o bzlib_randtable.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o bzlib_huffman.o bzlib_huffman.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o crc32.o crc32.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o display_options.o display_options.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o vsprintf.o vsprintf.c
+arm-hh-linux-gnueabi-ar crv libgeneric.a bzlib.o bzlib_crctable.o bzlib_decompress.o bzlib_randtable.o bzlib_huffman.o crc32.o ctype.o display_options.o div64.o ldiv.o string.o vsprintf.o zlib.o
+r - bzlib.o
+r - bzlib_crctable.o
+r - bzlib_decompress.o
+r - bzlib_randtable.o
+r - bzlib_huffman.o
+r - crc32.o
+r - ctype.o
+r - display_options.o
+r - div64.o
+r - ldiv.o
+r - string.o
+r - vsprintf.o
+r - zlib.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/lib_generic'
+make -C board/samsung/mini6410/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/board/samsung/mini6410'
+arm-hh-linux-gnueabi-gcc -M -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t lowlevel_init.S mini6410.c flash.c > .depend
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/board/samsung/mini6410'
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/board/samsung/mini6410'
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o mini6410.o mini6410.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o flash.o flash.c
+arm-hh-linux-gnueabi-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -c -o lowlevel_init.o lowlevel_init.S
+arm-hh-linux-gnueabi-ar crv libmini6410.a lowlevel_init.o mini6410.o flash.o
+a - lowlevel_init.o
+a - mini6410.o
+a - flash.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/board/samsung/mini6410'
+make -C cpu/s3c64xx/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/cpu/s3c64xx'
+arm-hh-linux-gnueabi-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -c -o start.o start.S
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o nand_cp.o nand_cp.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o i2c.o i2c.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o serial.o serial.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o usb_ohci.o usb_ohci.c
+In file included from usb_ohci.c:43:0:
+/mnt/ccc/others/u-boot-mini6410/include/usb.h:222:17: warning: inline function 'wait_ms' declared but never defined
+ void __inline__ wait_ms(unsigned long ms);
+                 ^~~~~~~
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o interrupts.o interrupts.c
+interrupts.c: In function 'interrupt_init':
+interrupts.c:192:20: warning: implicit declaration of function 'get_PCLK' [-Wimplicit-function-declaration]
+   timer_load_val = get_PCLK() / (2 * 16 * 100);
+                    ^~~~~~~~
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cpu.o cpu.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o nand.o nand.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o onenand.o onenand.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o onenand_cp.o onenand_cp.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o usbd-otg-hs.o usbd-otg-hs.c
+usbd-otg-hs.c: In function 's3c_usb_set_feature':
+usbd-otg-hs.c:690:3: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   if (otg.dev_req.wValue_L == 1)
+   ^~
+usbd-otg-hs.c:692:4: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'
+    break;
+    ^~~~~
+usbd-otg-hs.c: In function 's3c_usb_transfer_ep0':
+usbd-otg-hs.c:1172:4: warning: array subscript is above array bounds [-Warray-bounds]
+    s3c_usb_write_ep0_fifo(((u8 *)&config_high)+16, 8);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+usbd-otg-hs.c:1180:4: warning: array subscript is above array bounds [-Warray-bounds]
+    s3c_usb_write_ep0_fifo(((u8 *)&config_high)+24, 8);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o hs_mmc.o hs_mmc.c
+hs_mmc.c: In function 'set_sd_speed':
+hs_mmc.c:407:7: warning: variable 'temp' set but not used [-Wunused-but-set-variable]
+  uint temp;
+       ^~~~
+hs_mmc.c: In function 'get_sd_scr':
+hs_mmc.c:445:14: warning: variable 'uSCR2' set but not used [-Wunused-but-set-variable]
+  uint uSCR1, uSCR2;
+              ^~~~~
+hs_mmc.c: In function 'display_card_info':
+hs_mmc.c:800:60: warning: variable 'blk_size' set but not used [-Wunused-but-set-variable]
+   uint c_size, c_size_multi, read_bl_len, read_bl_partial, blk_size;
+                                                            ^~~~~~~~
+hs_mmc.c:800:43: warning: variable 'read_bl_partial' set but not used [-Wunused-but-set-variable]
+   uint c_size, c_size_multi, read_bl_len, read_bl_partial, blk_size;
+                                           ^~~~~~~~~~~~~~~
+hs_mmc.c: In function 'movi_write':
+hs_mmc.c:1010:8: warning: unused variable 'uCompareBufAddr' [-Wunused-variable]
+  ulong uCompareBufAddr = SDI_Compare_buffer_HSMMC;
+        ^~~~~~~~~~~~~~~
+hs_mmc.c:1009:8: warning: unused variable 'uTxBufAddr' [-Wunused-variable]
+  ulong uTxBufAddr = addr;
+        ^~~~~~~~~~
+hs_mmc.c:1008:7: warning: variable 'blksize' set but not used [-Wunused-but-set-variable]
+  uint blksize; //j,
+       ^~~~~~~
+hs_mmc.c: In function 'movi_read':
+hs_mmc.c:1076:7: warning: variable 'blksize' set but not used [-Wunused-but-set-variable]
+  uint blksize; //j, , Addr_temp = start_blk;
+       ^~~~~~~
+hs_mmc.c: In function 'wait_for_data_done':
+hs_mmc.c:132:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o movi.o movi.c
+arm-hh-linux-gnueabi-ar crv libs3c64xx.a nand_cp.o i2c.o serial.o  usb_ohci.o interrupts.o cpu.o nand.o onenand.o onenand_cp.o usbd-otg-hs.o hs_mmc.o movi.o
+r - nand_cp.o
+r - i2c.o
+r - serial.o
+r - usb_ohci.o
+r - interrupts.o
+r - cpu.o
+r - nand.o
+r - onenand.o
+r - onenand_cp.o
+r - usbd-otg-hs.o
+r - hs_mmc.o
+r - movi.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/cpu/s3c64xx'
+make -C cpu/s3c64xx/s3c6410/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/cpu/s3c64xx/s3c6410'
+arm-hh-linux-gnueabi-gcc -M -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes cpu_init.S speed.c > .depend
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/cpu/s3c64xx/s3c6410'
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/cpu/s3c64xx/s3c6410'
+arm-hh-linux-gnueabi-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -c -o cpu_init.o cpu_init.S
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o speed.o speed.c
+arm-hh-linux-gnueabi-ar crv libs3c6410.a cpu_init.o speed.o
+a - cpu_init.o
+a - speed.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/cpu/s3c64xx/s3c6410'
+make -C lib_arm/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/lib_arm'
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o armlinux.o armlinux.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o board.o board.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cache.o cache.c
+arm-hh-linux-gnueabi-ar crv libarm.a _ashldi3.o _ashrdi3.o _divsi3.o _modsi3.o _udivsi3.o _umodsi3.o armlinux.o board.o cache.o div0.o
+r - _ashldi3.o
+r - _ashrdi3.o
+r - _divsi3.o
+r - _modsi3.o
+r - _udivsi3.o
+r - _umodsi3.o
+r - armlinux.o
+r - board.o
+r - cache.o
+r - div0.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/lib_arm'
+make -C fs/cramfs/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/fs/cramfs'
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cramfs.o cramfs.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o uncompress.o uncompress.c
+arm-hh-linux-gnueabi-ar crv libcramfs.a cramfs.o uncompress.o
+r - cramfs.o
+r - uncompress.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/fs/cramfs'
+make -C fs/fat/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/fs/fat'
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o fat.o fat.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o file.o file.c
+arm-hh-linux-gnueabi-ar crv libfat.a fat.o file.o
+r - fat.o
+r - file.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/fs/fat'
+make -C fs/fdos/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/fs/fdos'
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o fat.o fat.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o vfat.o vfat.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o dev.o dev.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o fdos.o fdos.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o fs.o fs.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o subdir.o subdir.c
+arm-hh-linux-gnueabi-ar crv libfdos.a fat.o vfat.o dev.o fdos.o fs.o subdir.o
+r - fat.o
+r - vfat.o
+r - dev.o
+r - fdos.o
+r - fs.o
+r - subdir.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/fs/fdos'
+make -C fs/jffs2/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/fs/jffs2'
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o jffs2_1pass.o jffs2_1pass.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o compr_rtime.o compr_rtime.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o compr_rubin.o compr_rubin.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o compr_zlib.o compr_zlib.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o mini_inflate.o mini_inflate.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o compr_lzo.o compr_lzo.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o compr_lzari.o compr_lzari.c
+arm-hh-linux-gnueabi-ar crv libjffs2.a jffs2_1pass.o compr_rtime.o compr_rubin.o compr_zlib.o mini_inflate.o compr_lzo.o compr_lzari.o
+r - jffs2_1pass.o
+r - compr_rtime.o
+r - compr_rubin.o
+r - compr_zlib.o
+r - mini_inflate.o
+r - compr_lzo.o
+r - compr_lzari.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/fs/jffs2'
+make -C fs/reiserfs/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/fs/reiserfs'
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o reiserfs.o reiserfs.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o dev.o dev.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o mode_string.o mode_string.c
+arm-hh-linux-gnueabi-ar crv libreiserfs.a reiserfs.o dev.o mode_string.o
+r - reiserfs.o
+r - dev.o
+r - mode_string.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/fs/reiserfs'
+make -C fs/ext2/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/fs/ext2'
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ext2fs.o ext2fs.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o dev.o dev.c
+arm-hh-linux-gnueabi-ar crv libext2fs.a ext2fs.o dev.o
+r - ext2fs.o
+r - dev.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/fs/ext2'
+make -C net/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/net'
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o net.o net.c
+net.c: In function 'NetStartAgain':
+net.c:576:19: warning: variable 'once' set but not used [-Wunused-but-set-variable]
+  int noretry = 0, once = 0;
+                   ^~~~
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o tftp.o tftp.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o bootp.o bootp.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o rarp.o rarp.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o eth.o eth.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o nfs.o nfs.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o sntp.o sntp.c
+arm-hh-linux-gnueabi-ar crv libnet.a net.o tftp.o bootp.o rarp.o eth.o nfs.o sntp.o
+r - net.o
+r - tftp.o
+r - bootp.o
+r - rarp.o
+r - eth.o
+r - nfs.o
+r - sntp.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/net'
+make -C disk/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/disk'
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o part.o part.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o part_mac.o part_mac.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o part_dos.o part_dos.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o part_iso.o part_iso.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o part_amiga.o part_amiga.c
+arm-hh-linux-gnueabi-ar crv libdisk.a part.o part_mac.o part_dos.o part_iso.o part_amiga.o
+r - part.o
+r - part_mac.o
+r - part_dos.o
+r - part_iso.o
+r - part_amiga.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/disk'
+make -C rtc/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/rtc'
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o date.o date.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o bf533_rtc.o bf533_rtc.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ds12887.o ds12887.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ds1302.o ds1302.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ds1306.o ds1306.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ds1307.o ds1307.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ds1337.o ds1337.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ds1374.o ds1374.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ds1556.o ds1556.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ds164x.o ds164x.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ds174x.o ds174x.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o m41t11.o m41t11.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o max6900.o max6900.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o m48t35ax.o m48t35ax.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o mc146818.o mc146818.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o mk48t59.o mk48t59.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o mpc5xxx.o mpc5xxx.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o mpc8xx.o mpc8xx.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o pcf8563.o pcf8563.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o s3c24x0_rtc.o s3c24x0_rtc.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o rs5c372.o rs5c372.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o s3c24xx_rtc.o s3c24xx_rtc.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o s3c64xx_rtc.o s3c64xx_rtc.c
+arm-hh-linux-gnueabi-ar crv librtc.a date.o bf533_rtc.o ds12887.o ds1302.o ds1306.o ds1307.o ds1337.o ds1374.o ds1556.o ds164x.o ds174x.o m41t11.o max6900.o m48t35ax.o mc146818.o mk48t59.o mpc5xxx.o mpc8xx.o pcf8563.o s3c24x0_rtc.o rs5c372.o s3c24xx_rtc.o s3c64xx_rtc.o
+r - date.o
+r - bf533_rtc.o
+r - ds12887.o
+r - ds1302.o
+r - ds1306.o
+r - ds1307.o
+r - ds1337.o
+r - ds1374.o
+r - ds1556.o
+r - ds164x.o
+r - ds174x.o
+r - m41t11.o
+r - max6900.o
+r - m48t35ax.o
+r - mc146818.o
+r - mk48t59.o
+r - mpc5xxx.o
+r - mpc8xx.o
+r - pcf8563.o
+r - s3c24x0_rtc.o
+r - rs5c372.o
+r - s3c24xx_rtc.o
+r - s3c64xx_rtc.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/rtc'
+make -C dtt/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/dtt'
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o lm75.o lm75.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ds1621.o ds1621.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o adm1021.o adm1021.c
+arm-hh-linux-gnueabi-ar crv libdtt.a lm75.o ds1621.o adm1021.o
+r - lm75.o
+r - ds1621.o
+r - adm1021.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/dtt'
+make -C drivers/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/drivers'
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o 3c589.o 3c589.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ali512x.o ali512x.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o atmel_usart.o atmel_usart.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o bcm570x.o bcm570x.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cfb_console.o cfb_console.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cfi_flash.o cfi_flash.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cs8900.o cs8900.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ct69000.o ct69000.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o dataflash.o dataflash.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o dc2114x.o dc2114x.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o dm9000x.o dm9000x.c
+dm9000x.c: In function 'eth_init':
+dm9000x.c:310:9: warning: unused variable 'oft' [-Wunused-variable]
+  int i, oft, lnk;
+         ^~~
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o e1000.o e1000.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o eepro100.o eepro100.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o i8042.o i8042.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o inca-ip_sw.o inca-ip_sw.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o keyboard.o keyboard.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o lan91c96.o lan91c96.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o natsemi.o natsemi.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ne2000.o ne2000.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o netarm_eth.o netarm_eth.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o netconsole.o netconsole.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ns16550.o ns16550.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ns8382x.o ns8382x.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ns87308.o ns87308.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ns7520_eth.o ns7520_eth.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o omap1510_i2c.o omap1510_i2c.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o omap24xx_i2c.o omap24xx_i2c.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o pci.o pci.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o pci_auto.o pci_auto.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o pci_indirect.o pci_indirect.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o pcnet.o pcnet.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o plb2800_eth.o plb2800_eth.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ps2ser.o ps2ser.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ps2mult.o ps2mult.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o pc_keyb.o pc_keyb.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o rtl8019.o rtl8019.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o rtl8139.o rtl8139.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o rtl8169.o rtl8169.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o s3c4510b_eth.o s3c4510b_eth.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o s3c4510b_uart.o s3c4510b_uart.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o sed13806.o sed13806.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o sed156x.o sed156x.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o serial.o serial.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o serial_max3100.o serial_max3100.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o serial_pl010.o serial_pl010.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o serial_pl011.o serial_pl011.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o serial_xuartlite.o serial_xuartlite.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o sl811_usb.o sl811_usb.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o sm501.o sm501.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o smc91111.o smc91111.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o smiLynxEM.o smiLynxEM.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o status_led.o status_led.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o sym53c8xx.o sym53c8xx.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ahci.o ahci.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ti_pci1410a.o ti_pci1410a.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o tigon3.o tigon3.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o tsec.o tsec.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o usbdcore.o usbdcore.c
+usbdcore.c: In function 'usbd_device_event_irq':
+usbdcore.c:597:21: warning: variable 'state' set but not used [-Wunused-but-set-variable]
+  usb_device_state_t state;
+                     ^~~~~
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o usbdcore_ep0.o usbdcore_ep0.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o usbdcore_omap1510.o usbdcore_omap1510.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o usbtty.o usbtty.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o videomodes.o videomodes.c
+videomodes.c: In function 'video_get_params':
+videomodes.c:159:13: warning: variable 't' set but not used [-Wunused-but-set-variable]
+  int i = 0, t;
+             ^
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o w83c553f.o w83c553f.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ks8695eth.o ks8695eth.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o pxa_pcmcia.o pxa_pcmcia.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o mpc8xx_pcmcia.o mpc8xx_pcmcia.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o tqm8xx_pcmcia.o tqm8xx_pcmcia.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o rpx_pcmcia.o rpx_pcmcia.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o fsl_i2c.o fsl_i2c.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o 1-wire.o 1-wire.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o smc911x.o smc911x.c
+arm-hh-linux-gnueabi-ar crv libdrivers.a 3c589.o 5701rls.o ali512x.o atmel_usart.o bcm570x.o bcm570x_autoneg.o cfb_console.o cfi_flash.o cs8900.o ct69000.o dataflash.o dc2114x.o dm9000x.o e1000.o eepro100.o i8042.o inca-ip_sw.o keyboard.o lan91c96.o natsemi.o ne2000.o netarm_eth.o netconsole.o ns16550.o ns8382x.o ns87308.o ns7520_eth.o omap1510_i2c.o omap24xx_i2c.o pci.o pci_auto.o pci_indirect.o pcnet.o plb2800_eth.o ps2ser.o ps2mult.o pc_keyb.o rtl8019.o rtl8139.o rtl8169.o s3c4510b_eth.o s3c4510b_uart.o sed13806.o sed156x.o serial.o serial_max3100.o serial_pl010.o serial_pl011.o serial_xuartlite.o sl811_usb.o sm501.o smc91111.o smiLynxEM.o status_led.o sym53c8xx.o ahci.o ti_pci1410a.o tigon3.o tsec.o usbdcore.o usbdcore_ep0.o usbdcore_omap1510.o usbtty.o videomodes.o w83c553f.o ks8695eth.o pxa_pcmcia.o mpc8xx_pcmcia.o tqm8xx_pcmcia.o rpx_pcmcia.o fsl_i2c.o 1-wire.o smc911x.o
+a - 3c589.o
+a - 5701rls.o
+a - ali512x.o
+a - atmel_usart.o
+a - bcm570x.o
+a - bcm570x_autoneg.o
+a - cfb_console.o
+a - cfi_flash.o
+a - cs8900.o
+a - ct69000.o
+a - dataflash.o
+a - dc2114x.o
+a - dm9000x.o
+a - e1000.o
+a - eepro100.o
+a - i8042.o
+a - inca-ip_sw.o
+a - keyboard.o
+a - lan91c96.o
+a - natsemi.o
+a - ne2000.o
+a - netarm_eth.o
+a - netconsole.o
+a - ns16550.o
+a - ns8382x.o
+a - ns87308.o
+a - ns7520_eth.o
+a - omap1510_i2c.o
+a - omap24xx_i2c.o
+a - pci.o
+a - pci_auto.o
+a - pci_indirect.o
+a - pcnet.o
+a - plb2800_eth.o
+a - ps2ser.o
+a - ps2mult.o
+a - pc_keyb.o
+a - rtl8019.o
+a - rtl8139.o
+a - rtl8169.o
+a - s3c4510b_eth.o
+a - s3c4510b_uart.o
+a - sed13806.o
+a - sed156x.o
+a - serial.o
+a - serial_max3100.o
+a - serial_pl010.o
+a - serial_pl011.o
+a - serial_xuartlite.o
+a - sl811_usb.o
+a - sm501.o
+a - smc91111.o
+a - smiLynxEM.o
+a - status_led.o
+a - sym53c8xx.o
+a - ahci.o
+a - ti_pci1410a.o
+a - tigon3.o
+a - tsec.o
+a - usbdcore.o
+a - usbdcore_ep0.o
+a - usbdcore_omap1510.o
+a - usbtty.o
+a - videomodes.o
+a - w83c553f.o
+a - ks8695eth.o
+a - pxa_pcmcia.o
+a - mpc8xx_pcmcia.o
+a - tqm8xx_pcmcia.o
+a - rpx_pcmcia.o
+a - fsl_i2c.o
+a - 1-wire.o
+a - smc911x.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/drivers'
+make -C drivers/nand/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/drivers/nand'
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/drivers/nand'
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/drivers/nand'
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o nand.o nand.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o nand_base.o nand_base.c
+nand_base.c: In function 'nand_write_page_hwecc':
+nand_base.c:1551:15: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  uint8_t *p = buf;
+               ^~~
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o nand_ids.o nand_ids.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o nand_ecc.o nand_ecc.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o nand_bbt.o nand_bbt.c
+nand_bbt.c: In function 'search_bbt':
+nand_bbt.c:480:6: warning: variable 'bits' set but not used [-Wunused-but-set-variable]
+  int bits, startblock, block, dir;
+      ^~~~
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o nand_util.o nand_util.c
+nand_util.c: In function 'nand_erase_opts':
+nand_util.c:72:6: warning: variable 'clmpos' set but not used [-Wunused-but-set-variable]
+  int clmpos = 0;
+      ^~~~~~
+nand_util.c: In function 'nand_read_opts':
+nand_util.c:762:4: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+    if (!opts->quiet)
+    ^~
+nand_util.c:766:5: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'
+     percent_complete = percent;
+     ^~~~~~~~~~~~~~~~
+arm-hh-linux-gnueabi-ar crv libnand.a nand.o nand_base.o nand_ids.o nand_ecc.o nand_bbt.o nand_util.o
+a - nand.o
+a - nand_base.o
+a - nand_ids.o
+a - nand_ecc.o
+a - nand_bbt.o
+a - nand_util.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/drivers/nand'
+make -C drivers/nand_legacy/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/drivers/nand_legacy'
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/drivers/nand_legacy'
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/drivers/nand_legacy'
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o nand_legacy.o nand_legacy.c
+arm-hh-linux-gnueabi-ar crv libnand_legacy.a nand_legacy.o
+a - nand_legacy.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/drivers/nand_legacy'
+make -C drivers/onenand/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/drivers/onenand'
+arm-hh-linux-gnueabi-gcc -M -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes onenand.c generic.c onenand_base.c onenand_bbt.c > .depend
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/drivers/onenand'
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/drivers/onenand'
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o onenand.o onenand.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o generic.o generic.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o onenand_base.o onenand_base.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o onenand_bbt.o onenand_bbt.c
+arm-hh-linux-gnueabi-ar crv libonenand.a onenand.o generic.o onenand_base.o onenand_bbt.o
+a - onenand.o
+a - generic.o
+a - onenand_base.o
+a - onenand_bbt.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/drivers/onenand'
+make -C drivers/sk98lin/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/drivers/sk98lin'
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/drivers/sk98lin'
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/drivers/sk98lin'
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skge.o skge.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skaddr.o skaddr.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skgehwt.o skgehwt.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skgeinit.o skgeinit.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skgepnmi.o skgepnmi.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skgesirq.o skgesirq.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o ski2c.o ski2c.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o sklm80.o sklm80.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skqueue.o skqueue.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skrlmt.o skrlmt.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o sktimer.o sktimer.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skvpd.o skvpd.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skxmac2.o skxmac2.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skcsum.o skcsum.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o uboot_skb.o uboot_skb.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o uboot_drv.o uboot_drv.c
+arm-hh-linux-gnueabi-ar crv libsk98lin.a skge.o skaddr.o skgehwt.o skgeinit.o skgepnmi.o skgesirq.o ski2c.o sklm80.o skqueue.o skrlmt.o sktimer.o skvpd.o skxmac2.o skcsum.o uboot_skb.o uboot_drv.o
+a - skge.o
+a - skaddr.o
+a - skgehwt.o
+a - skgeinit.o
+a - skgepnmi.o
+a - skgesirq.o
+a - ski2c.o
+a - sklm80.o
+a - skqueue.o
+a - skrlmt.o
+a - sktimer.o
+a - skvpd.o
+a - skxmac2.o
+a - skcsum.o
+a - uboot_skb.o
+a - uboot_drv.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/drivers/sk98lin'
+make -C post/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/post'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/post'
+make -C post/cpu/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/post/cpu'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/post/cpu'
+make -C common/
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/common'
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/common'
+make[1]: Entering directory `/mnt/ccc/others/u-boot-mini6410/common'
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o main.o main.c
+main.c: In function 'cread_line':
+main.c:731:16: warning: variable 'rlen' set but not used [-Wunused-but-set-variable]
+  unsigned long rlen;
+                ^~~~
+main.c: In function 'FriendlyARMMenu':
+main.c:1468:4: warning: implicit declaration of function 'FriendlyARMFormatFrom' [-Wimplicit-function-declaration]
+    FriendlyARMFormatFrom(0, 1);
+    ^~~~~~~~~~~~~~~~~~~~~
+main.c: In function 'FriendlyARMGetDataFromUsbAndWriteNand':
+main.c:1599:8: warning: implicit declaration of function 'FriendlyARMCheckData' [-Wimplicit-function-declaration]
+  ret = FriendlyARMCheckData(RevPtr, RevLen, offset, MaxNandSize);
+        ^~~~~~~~~~~~~~~~~~~~
+main.c:1605:9: warning: implicit declaration of function 'FriendlyARMWriteNandMlcBoot' [-Wimplicit-function-declaration]
+   ret = FriendlyARMWriteNandMlcBoot(RevPtr, RevLen, 1);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ACEX1K.o ACEX1K.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o altera.o altera.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o bedbug.o bedbug.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o circbuf.o circbuf.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_ace.o cmd_ace.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_autoscript.o cmd_autoscript.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_bdinfo.o cmd_bdinfo.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_bedbug.o cmd_bedbug.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_bmp.o cmd_bmp.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_boot.o cmd_boot.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_bootm.o cmd_bootm.c
+In file included from /mnt/ccc/others/u-boot-mini6410/include/config.h:4:0,
+                 from /mnt/ccc/others/u-boot-mini6410/include/common.h:35,
+                 from cmd_bootm.c:27:
+cmd_bootm.c: In function 'do_bootm':
+/mnt/ccc/others/u-boot-mini6410/include/configs/mini6410.h:47:25: warning: implicit declaration of function 'virt_to_phy_smdk6410' [-Wimplicit-function-declaration]
+ #define virt_to_phys(x) virt_to_phy_smdk6410(x)
+                         ^
+cmd_bootm.c:178:10: note: in expansion of macro 'virt_to_phys'
+   addr = virt_to_phys(addr);
+          ^~~~~~~~~~~~
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_cache.o cmd_cache.c
+cmd_cache.c: In function 'do_branch':
+cmd_cache.c:97:11: warning: implicit declaration of function 'branch_disable' [-Wimplicit-function-declaration]
+   case 0: branch_disable();
+           ^~~~~~~~~~~~~~
+cmd_cache.c:99:11: warning: implicit declaration of function 'branch_enable' [-Wimplicit-function-declaration]
+   case 1: branch_enable ();
+           ^~~~~~~~~~~~~
+cmd_cache.c:105:4: warning: implicit declaration of function 'branch_status' [-Wimplicit-function-declaration]
+    branch_status() ? "ON" : "OFF");
+    ^~~~~~~~~~~~~
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_console.o cmd_console.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_date.o cmd_date.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_dcr.o cmd_dcr.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_diag.o cmd_diag.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_display.o cmd_display.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_doc.o cmd_doc.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_dtt.o cmd_dtt.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_eeprom.o cmd_eeprom.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_elf.o cmd_elf.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_ext2.o cmd_ext2.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_fat.o cmd_fat.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_fdc.o cmd_fdc.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_fdos.o cmd_fdos.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_flash.o cmd_flash.c
+cmd_flash.c: In function 'do_flerase':
+cmd_flash.c:341:32: warning: 'info' may be used uninitialized in this function [-Wmaybe-uninitialized]
+    sect_first, sect_last, (info-flash_info)+1);
+                                ^
+cmd_flash.c:340:3: warning: 'sect_first' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf ("Erase Flash Sectors %d-%d in Bank # %d ",
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    sect_first, sect_last, (info-flash_info)+1);
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cmd_flash.c:340:3: warning: 'sect_last' may be used uninitialized in this function [-Wmaybe-uninitialized]
+cmd_flash.c: In function 'do_protect':
+cmd_flash.c:524:9: warning: 'info' may be used uninitialized in this function [-Wmaybe-uninitialized]
+    (info-flash_info)+1);
+         ^
+cmd_flash.c:522:3: warning: 'sect_first' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   printf("%sProtect Flash Sectors %d-%d in Bank # %d\n",
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    p ? "" : "Un-", sect_first, sect_last,
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    (info-flash_info)+1);
+    ~~~~~~~~~~~~~~~~~~~~
+cmd_flash.c:522:3: warning: 'sect_last' may be used uninitialized in this function [-Wmaybe-uninitialized]
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_fpga.o cmd_fpga.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_i2c.o cmd_i2c.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_ide.o cmd_ide.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_immap.o cmd_immap.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_itest.o cmd_itest.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_jffs2.o cmd_jffs2.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_load.o cmd_load.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_log.o cmd_log.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_mem.o cmd_mem.c
+cmd_mem.c: In function 'do_mem_loop':
+cmd_mem.c:545:25: warning: variable 'junk' set but not used [-Wunused-but-set-variable]
+  ulong addr, length, i, junk;
+                         ^~~~
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_mii.o cmd_mii.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_misc.o cmd_misc.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_mmc.o cmd_mmc.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_nand.o cmd_nand.c
+cmd_nand.c: In function 'FriendlyARMGetNandSizeInMB':
+cmd_nand.c:183:15: warning: variable 'nand' set but not used [-Wunused-but-set-variable]
+  nand_info_t *nand;
+               ^~~~
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_net.o cmd_net.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_nvedit.o cmd_nvedit.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_pci.o cmd_pci.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_pcmcia.o cmd_pcmcia.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_portio.o cmd_portio.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_reginfo.o cmd_reginfo.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_reiser.o cmd_reiser.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_scsi.o cmd_scsi.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_spi.o cmd_spi.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_universe.o cmd_universe.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_usb.o cmd_usb.c
+cmd_usb.c: In function 'usb_display_string':
+cmd_usb.c:148:3: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   if (usb_string(dev,index,&buffer[0],256)>0);
+   ^~
+cmd_usb.c:149:4: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'
+    printf("String: \"%s\"",buffer);
+    ^~~~~~
+cmd_usb.c: In function 'usb_show_tree_graph':
+cmd_usb.c:241:27: warning: variable 'port' set but not used [-Wunused-but-set-variable]
+  int has_child,last_child,port;
+                           ^~~~
+In file included from cmd_usb.c:34:0:
+cmd_usb.c: At top level:
+/mnt/ccc/others/u-boot-mini6410/include/usb.h:222:17: warning: inline function 'wait_ms' declared but never defined
+ void __inline__ wait_ms(unsigned long ms);
+                 ^~~~~~~
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_vfd.o cmd_vfd.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o command.o command.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o console.o console.c
+console.c: In function 'serial_printf':
+console.c:101:7: warning: variable 'i' set but not used [-Wunused-but-set-variable]
+  uint i;
+       ^
+console.c: In function 'fprintf':
+console.c:146:7: warning: variable 'i' set but not used [-Wunused-but-set-variable]
+  uint i;
+       ^
+console.c: In function 'printf':
+console.c:220:7: warning: variable 'i' set but not used [-Wunused-but-set-variable]
+  uint i;
+       ^
+console.c: In function 'vprintf':
+console.c:237:7: warning: variable 'i' set but not used [-Wunused-but-set-variable]
+  uint i;
+       ^
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cyclon2.o cyclon2.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o devices.o devices.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o dlmalloc.o dlmalloc.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o docecc.o docecc.c
+arm-hh-linux-gnueabi-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wa,--no-warn \
+		-DENV_CRC=0 \
+		-c -o environment.o environment.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o env_common.o env_common.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o env_nand.o env_nand.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o env_dataflash.o env_dataflash.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o env_flash.o env_flash.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o env_eeprom.o env_eeprom.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o env_nvram.o env_nvram.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o env_nowhere.o env_nowhere.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o env_movi.o env_movi.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o env_onenand.o env_onenand.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o exports.o exports.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o flash.o flash.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o fpga.o fpga.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o ft_build.o ft_build.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o hush.o hush.c
+hush.c: In function 'lookup_param':
+hush.c:2804:2: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+  if (!src)
+  ^~
+hush.c:2807:3: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'
+   p = getenv(src);
+   ^
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o kgdb.o kgdb.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o lcd.o lcd.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o lists.o lists.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o lynxkdi.o lynxkdi.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o memsize.o memsize.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o miiphybb.o miiphybb.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o miiphyutil.o miiphyutil.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o s_record.o s_record.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o serial.o serial.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o soft_i2c.o soft_i2c.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o soft_spi.o soft_spi.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o spartan2.o spartan2.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o spartan3.o spartan3.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o usb.o usb.c
+usb.c: In function 'usb_parse_config':
+usb.c:290:17: warning: variable 'ch' set but not used [-Wunused-but-set-variable]
+  unsigned char *ch;
+                 ^~
+usb.c: In function 'usb_hub_port_connect_change':
+usb.c:1019:29: warning: variable 'portchange' set but not used [-Wunused-but-set-variable]
+  unsigned short portstatus, portchange;
+                             ^~~~~~~~~~
+usb.c: In function 'usb_hub_configure':
+usb.c:1072:25: warning: variable 'hubsts' set but not used [-Wunused-but-set-variable]
+  struct usb_hub_status *hubsts;
+                         ^~~~~~
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o usb_kbd.o usb_kbd.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o usb_storage.o usb_storage.c
+In file included from usb_storage.c:59:0:
+/mnt/ccc/others/u-boot-mini6410/include/usb.h:222:17: warning: inline function 'wait_ms' declared but never defined
+ void __inline__ wait_ms(unsigned long ms);
+                 ^~~~~~~
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o virtex2.o virtex2.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o xilinx.o xilinx.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o crc16.o crc16.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o xyzModem.o xyzModem.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_mac.o cmd_mac.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_onenand.o cmd_onenand.c
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_usbd.o cmd_usbd.c
+cmd_usbd.c:56:19: warning: 'pszMe' defined but not used [-Wunused-const-variable=]
+ static const char pszMe[] = "usbd: ";
+                   ^~~~~
+arm-hh-linux-gnueabi-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0xc7e00000  -I/mnt/ccc/others/u-boot-mini6410/include -fno-builtin -ffreestanding -nostdinc -isystem /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv5t -Wall -Wstrict-prototypes -c -o cmd_movi.o cmd_movi.c
+arm-hh-linux-gnueabi-ar crv libcommon.a main.o ACEX1K.o altera.o bedbug.o circbuf.o cmd_ace.o cmd_autoscript.o cmd_bdinfo.o cmd_bedbug.o cmd_bmp.o cmd_boot.o cmd_bootm.o cmd_cache.o cmd_console.o cmd_date.o cmd_dcr.o cmd_diag.o cmd_display.o cmd_doc.o cmd_dtt.o cmd_eeprom.o cmd_elf.o cmd_ext2.o cmd_fat.o cmd_fdc.o cmd_fdos.o cmd_flash.o cmd_fpga.o cmd_i2c.o cmd_ide.o cmd_immap.o cmd_itest.o cmd_jffs2.o cmd_load.o cmd_log.o cmd_mem.o cmd_mii.o cmd_misc.o cmd_mmc.o cmd_nand.o cmd_net.o cmd_nvedit.o cmd_pci.o cmd_pcmcia.o cmd_portio.o cmd_reginfo.o cmd_reiser.o cmd_scsi.o cmd_spi.o cmd_universe.o cmd_usb.o cmd_vfd.o command.o console.o cyclon2.o devices.o dlmalloc.o docecc.o environment.o env_common.o env_nand.o env_dataflash.o env_flash.o env_eeprom.o env_nvram.o env_nowhere.o env_movi.o env_onenand.o exports.o flash.o fpga.o ft_build.o hush.o kgdb.o lcd.o lists.o lynxkdi.o memsize.o miiphybb.o miiphyutil.o s_record.o serial.o soft_i2c.o soft_spi.o spartan2.o spartan3.o usb.o usb_kbd.o usb_storage.o virtex2.o xilinx.o crc16.o xyzModem.o cmd_mac.o cmd_onenand.o cmd_usbd.o cmd_movi.o
+a - main.o
+a - ACEX1K.o
+a - altera.o
+a - bedbug.o
+a - circbuf.o
+a - cmd_ace.o
+a - cmd_autoscript.o
+a - cmd_bdinfo.o
+a - cmd_bedbug.o
+a - cmd_bmp.o
+a - cmd_boot.o
+a - cmd_bootm.o
+a - cmd_cache.o
+a - cmd_console.o
+a - cmd_date.o
+a - cmd_dcr.o
+a - cmd_diag.o
+a - cmd_display.o
+a - cmd_doc.o
+a - cmd_dtt.o
+a - cmd_eeprom.o
+a - cmd_elf.o
+a - cmd_ext2.o
+a - cmd_fat.o
+a - cmd_fdc.o
+a - cmd_fdos.o
+a - cmd_flash.o
+a - cmd_fpga.o
+a - cmd_i2c.o
+a - cmd_ide.o
+a - cmd_immap.o
+a - cmd_itest.o
+a - cmd_jffs2.o
+a - cmd_load.o
+a - cmd_log.o
+a - cmd_mem.o
+a - cmd_mii.o
+a - cmd_misc.o
+a - cmd_mmc.o
+a - cmd_nand.o
+a - cmd_net.o
+a - cmd_nvedit.o
+a - cmd_pci.o
+a - cmd_pcmcia.o
+a - cmd_portio.o
+a - cmd_reginfo.o
+a - cmd_reiser.o
+a - cmd_scsi.o
+a - cmd_spi.o
+a - cmd_universe.o
+a - cmd_usb.o
+a - cmd_vfd.o
+a - command.o
+a - console.o
+a - cyclon2.o
+a - devices.o
+a - dlmalloc.o
+a - docecc.o
+a - environment.o
+a - env_common.o
+a - env_nand.o
+a - env_dataflash.o
+a - env_flash.o
+a - env_eeprom.o
+a - env_nvram.o
+a - env_nowhere.o
+a - env_movi.o
+a - env_onenand.o
+a - exports.o
+a - flash.o
+a - fpga.o
+a - ft_build.o
+a - hush.o
+a - kgdb.o
+a - lcd.o
+a - lists.o
+a - lynxkdi.o
+a - memsize.o
+a - miiphybb.o
+a - miiphyutil.o
+a - s_record.o
+a - serial.o
+a - soft_i2c.o
+a - soft_spi.o
+a - spartan2.o
+a - spartan3.o
+a - usb.o
+a - usb_kbd.o
+a - usb_storage.o
+a - virtex2.o
+a - xilinx.o
+a - crc16.o
+a - xyzModem.o
+a - cmd_mac.o
+a - cmd_onenand.o
+a - cmd_usbd.o
+a - cmd_movi.o
+make[1]: Leaving directory `/mnt/ccc/others/u-boot-mini6410/common'
+UNDEF_SYM=`arm-hh-linux-gnueabi-objdump -x lib_generic/libgeneric.a board/samsung/mini6410/libmini6410.a cpu/s3c64xx/libs3c64xx.a cpu/s3c64xx/s3c6410/libs3c6410.a lib_arm/libarm.a fs/cramfs/libcramfs.a fs/fat/libfat.a fs/fdos/libfdos.a fs/jffs2/libjffs2.a fs/reiserfs/libreiserfs.a fs/ext2/libext2fs.a net/libnet.a disk/libdisk.a rtc/librtc.a dtt/libdtt.a drivers/libdrivers.a drivers/nand/libnand.a drivers/nand_legacy/libnand_legacy.a drivers/onenand/libonenand.a drivers/sk98lin/libsk98lin.a post/libpost.a post/cpu/libcpu.a common/libcommon.a |sed  -n -e 's/.*\(__u_boot_cmd_.*\)/-u\1/p'|sort|uniq`;\
+		cd /mnt/ccc/others/u-boot-mini6410 && arm-hh-linux-gnueabi-ld -Bstatic -T /mnt/ccc/others/u-boot-mini6410/board/samsung/mini6410/u-boot.lds -Ttext 0xc7e00000  $UNDEF_SYM cpu/s3c64xx/start.o \
+			--start-group lib_generic/libgeneric.a board/samsung/mini6410/libmini6410.a cpu/s3c64xx/libs3c64xx.a cpu/s3c64xx/s3c6410/libs3c6410.a lib_arm/libarm.a fs/cramfs/libcramfs.a fs/fat/libfat.a fs/fdos/libfdos.a fs/jffs2/libjffs2.a fs/reiserfs/libreiserfs.a fs/ext2/libext2fs.a net/libnet.a disk/libdisk.a rtc/librtc.a dtt/libdtt.a drivers/libdrivers.a drivers/nand/libnand.a drivers/nand_legacy/libnand_legacy.a drivers/onenand/libonenand.a drivers/sk98lin/libsk98lin.a post/libpost.a post/cpu/libcpu.a common/libcommon.a --end-group -L /mnt/ccc/others/crosstool-ng/crosstool-ng-1.23.0/arm11tools/lib/gcc/arm-hh-linux-gnueabi/6.3.0 -lgcc \
+			-Map u-boot.map -o u-boot
+arm-hh-linux-gnueabi-objcopy --gap-fill=0xff -O srec u-boot u-boot.srec
+arm-hh-linux-gnueabi-objcopy --gap-fill=0xff -O binary u-boot u-boot.bin
+arm-hh-linux-gnueabi-objdump -d u-boot > u-boot.dis
